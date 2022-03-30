@@ -38,3 +38,13 @@ Your app is ready to be deployed!
 ### `npm run deploy `
 
 The contents of the build folder will be moved to the remote gh-pages branch
+
+## Demo
+
+[Click me to go to around-react app!](https://avi413.github.io/around-react/)
+
+
+
+## Authors
+
+- [@avidalal](https://www.github.com/avi413)
