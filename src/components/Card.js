@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Card (props) {
     return (
         <div id={props.card.id} onClick={props.click}>

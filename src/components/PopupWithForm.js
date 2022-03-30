@@ -1,3 +1,5 @@
+import React from 'react';
+
 function PopupWithForm (props) {
     const open = props.isOpen ? ' popup_opened' : '';
     return (

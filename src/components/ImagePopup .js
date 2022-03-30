@@ -1,3 +1,5 @@
+import React from 'react';
+
 function ImagePopup (props) {
     const open = props.selectedCard.isCardOpen ? ' popup_opened' : '';
     return (
