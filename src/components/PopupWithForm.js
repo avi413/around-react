@@ -1,7 +1,3 @@
-import cx from 'classnames';
-
-
-
 function PopupWithForm (props) {
     const open = props.isOpen ? ' popup_opened' : '';
     return (

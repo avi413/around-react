@@ -13,7 +13,6 @@ function Main ( props ) {
 
     useEffect(() => {  
      api.init().then(([user,apiCards])=>{
-         console.log(apiCards);
          setUserName(user.name);
          setUserDescription(user.about);
          setUserAvatar(user.avatar);
@@ -68,8 +67,8 @@ function Main ( props ) {
             />
 
             <PopupWIthImage 
-                isOpen  = { false }
-                close   = { props.onCloseClick }
+                selectedCard = { props.selectedCard }
+                close        = { props.onCloseClick }
             />
 
             <section className="profile">
@@ -90,14 +89,12 @@ function Main ( props ) {
             </section>
             <section className="gallery">
                 <ul className="gallery__list">
-                {
-                    
-                    cards.map(function (item) {
-                        console.log(item);
+                {            
+                    cards.map(function (item, i) {
                             return <Card 
-                                        key     = { item.id } 
-                                        link    = {item.link }
-                                        name    = { item.name }
+                                        card    = { item } 
+                                        key     = { i } 
+                                        click   ={props.onCardClick}
                                     />
                     })  
                 }

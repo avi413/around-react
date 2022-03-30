@@ -3,10 +3,20 @@
     margin-top: 40px;
     justify-content: space-between;
     align-items: center;
+    max-width: 880px;
+margin: auto;
 }
 
 @media screen and (max-width: 968px){
     .profile {
         flex-direction: column;
+        margin: 0;
+    max-width: 581px;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .profile {
+        max-width: 320px;
     }
 }

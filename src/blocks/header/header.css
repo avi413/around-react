@@ -3,6 +3,8 @@
     padding-bottom: 41px;
     border-bottom: 1px solid #545454B3;
     margin: 0;
+    max-width: 880px;
+    margin: auto;
 }
 
 @media screen and (max-width: 968px){
@@ -10,5 +12,12 @@
         padding-top: 28px;
         padding-bottom: 32px;
         margin: 0;
+        max-width: 581px;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .header {
+        max-width: 320px;
     }
 }
