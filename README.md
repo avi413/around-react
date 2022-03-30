@@ -1,8 +1,8 @@
 # around-react
 
-A React app illustrate use an Backend API for
+A React app illustrate use an Backend API
 
-This project is used by the following companies:
+This project is used by the following actions:
 
 - Profile update
 - Add a card item
