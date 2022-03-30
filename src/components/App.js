@@ -7,10 +7,7 @@ function App() {
     const [ isEditProfilePopupOpen, setIsEditProfilePopupOpen ]   = useState( false );
     const [ isAddPlacePopupOpen, setIsAddPlacePopupOpen ]         = useState( false );
     const [ isEditAvatarPopupOpen, setIsEditAvatarPopupOpen ]     = useState( false );
-    const [ selectedCard, setSelectedCard ]                       = useState( {
-      isCardOpen: false,
-      link: '',
-    } );
+    const [ selectedCard, setSelectedCard ]                       = useState( {} );
 
     const handleEditAvatarClick = () => {
         setIsEditAvatarPopupOpen(true);
