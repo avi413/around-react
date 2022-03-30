@@ -45,7 +45,6 @@ function Main ( props ) {
                 <span className="popup__input-error avatar-link-input-error"></span>
             </PopupWithForm>
 
-
             <PopupWithForm 
                 title   = "New place" 
                 name    = "new-card" lable="Save" 
@@ -84,21 +83,20 @@ function Main ( props ) {
                         <button aria-label="edit profile" type="button" className="profile__edit-btn button button_clear button_open button_opacity_m button_border_sm" onClick={props.onEditProfileClick}></button>
                     </div>
                 </div>
-                
                 <button  aria-label="add profile" type="button" className="profile__add-btn button button_clear button_open button_opacity_m button_border_m" onClick={props.onAddPlaceClick}></button>
             </section>
+
             <section className="gallery">
                 <ul className="gallery__list">
                 {            
                     cards.map(function (item, i) {
-                            return <Card 
-                                        card    = { item } 
-                                        key     = { i } 
-                                        click   ={props.onCardClick}
-                                    />
+                        return <Card 
+                                    card    = { item } 
+                                    key     = { i } 
+                                    click   ={props.onCardClick}
+                                />
                     })  
-                }
-                    
+                }    
                 </ul>
             </section>
     </main>
