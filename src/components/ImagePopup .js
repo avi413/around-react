@@ -1,4 +1,4 @@
-function PopupWIthImage (props) {
+function ImagePopup (props) {
     const open = props.selectedCard.isCardOpen ? ' popup_opened' : '';
     return (
         <>
@@ -13,4 +13,4 @@ function PopupWIthImage (props) {
             )}
         </>
     )}
-export default PopupWIthImage;
+export default ImagePopup;

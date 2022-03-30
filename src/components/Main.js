@@ -1,7 +1,7 @@
 import Card from './Card';
 import profileEdit from '../images/profile-edit.svg'
 import PopupWithForm from './PopupWithForm';
-import PopupWIthImage from './PopupWIthImage';
+import ImagePopup from './ImagePopup ';
 import React, { useState, useEffect } from 'react';
 import { api } from '../utils/api';
 
@@ -66,7 +66,7 @@ function Main ( props ) {
                 close   = { props.onCloseClick }
             />
 
-            <PopupWIthImage 
+            <ImagePopup 
                 selectedCard = { props.selectedCard }
                 close        = { props.onCloseClick }
             />
