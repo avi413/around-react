@@ -14,8 +14,7 @@ function PopupWithForm(props) {
         <form
           action="#"
           className={`popup__form popup__form_type_${props.name}`}
-          name="profileform"
-          noValidate
+          name={props.formName}
         >
           <fieldset className="popup__form-set">
             {props.children}
