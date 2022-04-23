@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PopupWithForm from "./PopupWithForm";
-import ImagePopup from "./ImagePopup ";
+import ImagePopup from "./ImagePopup";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
