@@ -1,31 +1,43 @@
 import React from "react";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
+
 
 function Card(props) {
+  const currentUser = React.useContext(CurrentUserContext);
+  const card = props.card;
+  const isOwn = card.owner._id === currentUser._id;
+  // Creating a variable which will then set in `className` for the delete button
+  const cardDeleteButtonClassName = `${
+    isOwn
+      ? "gallery__item-trash-btn_visible"
+      : " gallery__item-trash-btn_hidden"
+  }`;
+  const isLikedClass = `${props.isLiked ? "gallery__like-btn_active" : "gallery__like-btn"}`
   return (
-    <div id={props.card.id}>
+    <div id={card.id}>
       <li className="gallery__item">
         <button
           aria-label="trash button"
           type="button"
-          className="gallery__item-trash-btn button button_clear"
+          className={`${cardDeleteButtonClassName} button button_clear`}
+          onClick={()=>props.onCardDelete(card)}
         ></button>
         <img
-          src={props.card.link}
+          src={card.link}
           className="gallery__item-img"
-          onClick={() =>
-            props.click({ link: props.card.link, name: props.card.name })
-          }
-          alt={props.card.name}
+          onClick={() => props.click({ link: card.link, name: card.name })}
+          alt={card.name}
         />
         <div className="gallery__item-footer">
-          <h2 className="gallery__item-name">{props.card.name}</h2>
+          <h2 className="gallery__item-name">{card.name}</h2>
           <div className="gllery__like">
             <button
               aria-label="like button"
               type="button"
-              className="gallery__like-btn button button_clear"
+              className={`${isLikedClass} button button_clear`}
+              onClick={()=>props.onCardLike(card)}
             ></button>
-            <p className="gllery__like-count">{props.card.likes.length}</p>
+            <p className="gllery__like-count">{card.likes.length}</p>
           </div>
         </div>
       </li>

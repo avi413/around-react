@@ -45,7 +45,8 @@
 @import url("../src/blocks/gallery/__like-btn/gallery__like-btn.css");
 @import url("../src/blocks/gallery/__like/gllery__like.css");
 @import url("../src/blocks/gallery/__like-count/gllery__like-count.css");
-@import url("../src/blocks/gallery/__item-trash-btn/gallery__item-trash-btn.css");
+@import url("../src/blocks/gallery/__item-trash-btn/gallery__item-trash-btn_visible.css");
+@import url("../src/blocks/gallery/__item-trash-btn/gallery__item-trash-btn_hidden.css");
 @import url("../src/blocks/gallery/__like-btn/_active/gallery__like-btn_active.css");
 @import url("../src/blocks/gallery/__item-name/gallery__item-name.css");
 @import url("../src/blocks/footer/footer.css");

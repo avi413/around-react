@@ -47,6 +47,15 @@ class Api {
     return this._call(`/cards/likes/${cardId}`,'DELETE');
   }
 
+  changeLikeCardStatus = (cardId, isLiked) => {
+    if(isLiked) {
+      return this._call(`/cards/likes/${cardId}`,'PUT');
+    }
+    else {
+      return this._call(`/cards/likes/${cardId}`,'DELETE');
+    }
+  }
+
   deleteCard = (cardId) => {
     return this._call(`/cards/${cardId}`,'DELETE');
   }

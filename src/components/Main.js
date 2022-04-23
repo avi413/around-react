@@ -1,21 +1,17 @@
-import Card from "./Card";
-import profileEdit from "../images/profile-edit.svg";
 import React, { useState, useEffect } from "react";
 import { api } from "../utils/api";
+import Card from "./Card";
+import profileEdit from "../images/profile-edit.svg";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function Main(props) {
-  const [userName, setUserName] = useState("");
-  const [userDescription, setUserDescription] = useState("");
-  const [userAvatar, setUserAvatar] = useState("");
+  const currentUser = React.useContext(CurrentUserContext);
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
     api
-      .init()
-      .then(([user, apiCards]) => {
-        setUserName(user.name);
-        setUserDescription(user.about);
-        setUserAvatar(user.avatar);
+      .getInitialCards()
+      .then((apiCards) => {
         setCards(apiCards);
       })
       .catch((e) => {
@@ -29,7 +25,11 @@ function Main(props) {
         <p className="profile__error"></p>
         <div className="profile__info">
           <div className="profile__img">
-            <img className="profile__avatar" src={userAvatar} alt="avatar" />
+            <img
+              className="profile__avatar"
+              src={currentUser.avatar}
+              alt="avatar"
+            />
             <img
               className="profile__edit-avatar"
               src={profileEdit}
@@ -38,8 +38,8 @@ function Main(props) {
             />
           </div>
           <div className="profile__text">
-            <h1 className="profile__name">{userName}</h1>
-            <p className="profile__about-me">{userDescription}</p>
+            <h1 className="profile__name">{currentUser.name}</h1>
+            <p className="profile__about-me">{currentUser.about}</p>
             <button
               aria-label="edit profile"
               type="button"
@@ -58,13 +58,26 @@ function Main(props) {
 
       <section className="gallery">
         <ul className="gallery__list">
-          {cards.map(function(item) {
-            return ( 
-                <Card 
-                    card={item} 
-                    key={item._id} 
-                    click={props.onCardClick} 
-                />
+          {cards.map(function(card) {
+              const isLiked = card.likes.some(user => user._id === currentUser._id);
+    
+              function handleCardLike(card) {
+                // Check one more time if this card was already liked
+                // Send a request to the API and getting the updated card data
+                api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
+                    setCards((state) => state.map((currentCard) => currentCard._id === card._id ? newCard : currentCard));
+                  });
+                } 
+
+                function handleCardDelete(card) {
+                  api.deleteCard(card._id)
+                  .then(() =>{
+                    setCards(cards.filter(item =>item._id != card._id))
+                  })
+                }
+
+            return (
+              <Card click={props.onCardClick} card={card} key={card._id} onCardLike={handleCardLike} isLiked={isLiked} onCardDelete={handleCardDelete}/>
             );
           })}
         </ul>
