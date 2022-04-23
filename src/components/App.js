@@ -6,7 +6,7 @@ import Main from "./Main";
 import Footer from "./Footer";
 import { api } from "../utils/api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-
+import EditProfilePopup from "./EditProfilePopup"
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
@@ -57,40 +57,22 @@ function App() {
     });
   };
 
+  const handleUpdateUser = (data) => {
+    api.editProfile(data)
+    .then((user) =>{
+      setCurrentUser(user);
+      closeAllPopups();
+    })
+  }
+
   return (
     <div className="app">
       <CurrentUserContext.Provider value={currentUser}>
-        <PopupWithForm
-          title="Edit profile"
-          name="profile"
-          lable="Save"
+        <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
-          close={closeAllPopups}
-          formName="profileForm"
-        >
-          <input
-            id="profile-name-input"
-            required
-            className="popup__input popup__input-text popup__input-text_type_name"
-            type="text"
-            placeholder="Name"
-            name="profileName"
-            minLength="2"
-            maxLength="40"
-          />
-          <span className="popup__input-error profile-name-input-error"></span>
-          <input
-            id="profile-about-me-input"
-            required
-            className="popup__input popup__input-text popup__input-text_type_about-me"
-            type="text"
-            placeholder="About me"
-            name="profileAboutMe"
-            minLength="2"
-            maxLength="400"
-          />
-          <span className="popup__input-error profile-about-me-input-error"></span>
-        </PopupWithForm>
+          onClose={closeAllPopups}
+          onUpdateUser={handleUpdateUser}
+        />
 
         <PopupWithForm
           title="Change profile picture"
