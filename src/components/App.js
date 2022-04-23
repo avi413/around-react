@@ -77,7 +77,7 @@ function App() {
   const handleUpdateAvatar = (data) => {
     api
       .editProfileAvatar(data.avatar)
-      .then(() => {
+      .then((data) => {
         setCurrentUser(data);
         closeAllPopups();
       })
