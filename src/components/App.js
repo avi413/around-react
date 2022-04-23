@@ -6,11 +6,9 @@ import Main from "./Main";
 import Footer from "./Footer";
 import { api } from "../utils/api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import EditProfilePopup from "./EditProfilePopup"
-import EditAvatarPopup from "./EditAvatarPopup"
-import AddPlacePopup from "./AddPlacePopup"
-
-
+import EditProfilePopup from "./EditProfilePopup";
+import EditAvatarPopup from "./EditAvatarPopup";
+import AddPlacePopup from "./AddPlacePopup";
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -19,7 +17,6 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
-
 
   useEffect(() => {
     api
@@ -66,59 +63,69 @@ function App() {
   };
 
   const handleUpdateUser = (data) => {
-    api.editProfile(data)
-    .then((user) =>{
-      setCurrentUser(user);
-      closeAllPopups();
-    })
-    .catch((e) => {
-      console.log(e);
-    });
-  }
-
-  const handleUpdateAvatar = (data) => {
-    api.editProfileAvatar(data.avatar)
-    .then(() =>{
-      setCurrentUser(data);
-      closeAllPopups();
-    })
-    .catch((e) => {
-      console.log(e);
-    });
-  }
-
-  const handleCardLike = (card) =>{
-    const isLiked = card.likes.some(user => user._id === currentUser._id);
-    // Check one more time if this card was already liked
-    // Send a request to the API and getting the updated card data
-    api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
-        setCards((state) => state.map((currentCard) => currentCard._id === card._id ? newCard : currentCard));
+    api
+      .editProfile(data)
+      .then((user) => {
+        setCurrentUser(user);
+        closeAllPopups();
       })
       .catch((e) => {
         console.log(e);
       });
-    } 
+  };
+
+  const handleUpdateAvatar = (data) => {
+    api
+      .editProfileAvatar(data.avatar)
+      .then(() => {
+        setCurrentUser(data);
+        closeAllPopups();
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+  const handleCardLike = (card) => {
+    const isLiked = card.likes.some((user) => user._id === currentUser._id);
+    // Check one more time if this card was already liked
+    // Send a request to the API and getting the updated card data
+    api
+      .changeLikeCardStatus(card._id, !isLiked)
+      .then((newCard) => {
+        setCards((state) =>
+          state.map((currentCard) =>
+            currentCard._id === card._id ? newCard : currentCard
+          )
+        );
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   const handleCardDelete = (card) => {
-    api.deleteCard(card._id)
-    .then(() =>{
-      setCards(cards.filter(item =>item._id !== card._id))
-    })
-    .catch((e) => {
-      console.log(e);
-    });
-  }
+    api
+      .deleteCard(card._id)
+      .then(() => {
+        setCards(cards.filter((item) => item._id !== card._id));
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   const handleAddPlaceSubmit = (card) => {
-    api.createNewCard(card.link, card.name)
-    .then((newCard) =>{
-      setCards([newCard, ...cards])
-      closeAllPopups();
-    })
-    .catch((e) => {
-      console.log(e);
-    });
-  }
+    api
+      .createNewCard(card.link, card.name)
+      .then((newCard) => {
+        setCards([newCard, ...cards]);
+        closeAllPopups();
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   return (
     <div className="app">
@@ -129,17 +136,17 @@ function App() {
           onUpdateUser={handleUpdateUser}
         />
 
-      <EditAvatarPopup 
-          isOpen={isEditAvatarPopupOpen} 
+        <EditAvatarPopup
+          isOpen={isEditAvatarPopupOpen}
           onClose={closeAllPopups}
-          onUpdateAvatar={handleUpdateAvatar} /> 
-        
-      <AddPlacePopup 
-          isOpen={isAddPlacePopupOpen} 
-          onClose={closeAllPopups}
-          onAddPlace={handleAddPlaceSubmit} 
-      />
+          onUpdateAvatar={handleUpdateAvatar}
+        />
 
+        <AddPlacePopup
+          isOpen={isAddPlacePopupOpen}
+          onClose={closeAllPopups}
+          onAddPlace={handleAddPlaceSubmit}
+        />
 
         <PopupWithForm
           title="Are you sure?"
@@ -158,7 +165,7 @@ function App() {
           onEditAvatarClick={handleEditAvatarClick}
           onCardClick={handleCardClick}
           onCardLike={handleCardLike}
-          onCardDelete= {handleCardDelete}
+          onCardDelete={handleCardDelete}
           isEditProfilePopupOpen={isEditProfilePopupOpen}
           isAddPlacePopupOpen={isAddPlacePopupOpen}
           isEditAvatarPopupOpen={isEditAvatarPopupOpen}
