@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "22e48612e1ac6b97d431",
+    "revision": "5b75c4279883aa430e5e",
     "url": "/around-react/static/css/main.5a3d76cc.chunk.css"
   },
   {
-    "revision": "22e48612e1ac6b97d431",
-    "url": "/around-react/static/js/main.22e48612.chunk.js"
+    "revision": "5b75c4279883aa430e5e",
+    "url": "/around-react/static/js/main.5b75c427.chunk.js"
   },
   {
     "revision": "cc79fa3910fc97852656",
@@ -28,16 +28,12 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/profile-edit.d476a8b8.svg"
   },
   {
-    "revision": "587ea55e6317ff1b4fcba35e837be311",
-    "url": "/around-react/static/media/mobile-close-icon.587ea55e.svg"
-  },
-  {
     "revision": "bdfb8ebb113b9312e080c2f4b4213223",
     "url": "/around-react/static/media/plus.bdfb8ebb.svg"
   },
   {
-    "revision": "f202ad3053ae4410e6d246994df87581",
-    "url": "/around-react/static/media/Trash.f202ad30.svg"
+    "revision": "587ea55e6317ff1b4fcba35e837be311",
+    "url": "/around-react/static/media/mobile-close-icon.587ea55e.svg"
   },
   {
     "revision": "58430b3532ccf0b58af98981a0fb6d48",
@@ -52,8 +48,20 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/edit.58afbe73.svg"
   },
   {
+    "revision": "f202ad3053ae4410e6d246994df87581",
+    "url": "/around-react/static/media/Trash.f202ad30.svg"
+  },
+  {
+    "revision": "ef38b085db5a81756d4dc5a64c1fccb8",
+    "url": "/around-react/static/media/like-active.ef38b085.svg"
+  },
+  {
     "revision": "eba360005eef21ac6807e45dc8422042",
     "url": "/around-react/static/media/Inter-Regular.eba36000.ttf"
+  },
+  {
+    "revision": "94185013a6a56d2102a4e27feab0b94d",
+    "url": "/around-react/static/media/like.94185013.svg"
   },
   {
     "revision": "c6dacb6bcfcd747bba440bf2fbd2c85a",
@@ -64,15 +72,7 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/Inter-Medium.1aa99aa2.ttf"
   },
   {
-    "revision": "94185013a6a56d2102a4e27feab0b94d",
-    "url": "/around-react/static/media/like.94185013.svg"
-  },
-  {
-    "revision": "ef38b085db5a81756d4dc5a64c1fccb8",
-    "url": "/around-react/static/media/like-active.ef38b085.svg"
-  },
-  {
-    "revision": "b461862549a3d6bf35470ae2d9957388",
+    "revision": "b269c08313f159b35af1b498b7136d41",
     "url": "/around-react/index.html"
   }
 ];

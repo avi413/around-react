@@ -1,7 +1,7 @@
 {
   "main.css": "/around-react/static/css/main.5a3d76cc.chunk.css",
-  "main.js": "/around-react/static/js/main.22e48612.chunk.js",
-  "main.js.map": "/around-react/static/js/main.22e48612.chunk.js.map",
+  "main.js": "/around-react/static/js/main.5b75c427.chunk.js",
+  "main.js.map": "/around-react/static/js/main.5b75c427.chunk.js.map",
   "static/js/1.cc79fa39.chunk.js": "/around-react/static/js/1.cc79fa39.chunk.js",
   "static/js/1.cc79fa39.chunk.js.map": "/around-react/static/js/1.cc79fa39.chunk.js.map",
   "static/js/2.d82094e9.chunk.js": "/around-react/static/js/2.d82094e9.chunk.js",
@@ -10,9 +10,9 @@
   "runtime~main.js.map": "/around-react/static/js/runtime~main.b671ef79.js.map",
   "static/media/logo.svg": "/around-react/static/media/logo.3e6893cd.svg",
   "static/media/profile-edit.svg": "/around-react/static/media/profile-edit.d476a8b8.svg",
-  "static/media/index.css": "/around-react/static/media/like-active.ef38b085.svg",
+  "static/media/index.css": "/around-react/static/media/Inter-Medium.1aa99aa2.ttf",
   "static/css/main.5a3d76cc.chunk.css.map": "/around-react/static/css/main.5a3d76cc.chunk.css.map",
   "index.html": "/around-react/index.html",
-  "precache-manifest.d1ac534051ba60b24cfb3ff962a046ef.js": "/around-react/precache-manifest.d1ac534051ba60b24cfb3ff962a046ef.js",
+  "precache-manifest.d42c576f6fa626edbaea6a550015ea3e.js": "/around-react/precache-manifest.d42c576f6fa626edbaea6a550015ea3e.js",
   "service-worker.js": "/around-react/service-worker.js"
 }
