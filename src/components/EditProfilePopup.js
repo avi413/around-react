@@ -5,44 +5,34 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext";
 function EditProfilePopup(props) {
     const currentUser = React.useContext(CurrentUserContext);
 
-    let [data, setData] = useState({
-        profileName: '',
-        profileAboutMe: ''
-        })
+    const [profileName, setProfileName] = useState('')
+    const [profileAboutMe, setProfileAboutMe] = useState({})
 
-    const handleChange = (event) => {
-        let value = event.target.value;
-        let name = event.target.name;
-    
-        setData((prevalue) => {
-           
-        return {
-            ...prevalue,   // Spread Operator               
-            [name]: value
-        }
-        })
-    }
 
     const handleSubmit = (event) => {
          // Prevent the browser from navigating to the form address
          event.preventDefault();
          // Pass the values of the managed components to the external handler
         props.onUpdateUser({
-            name: data.profileName,
-            about: data.profileAboutMe,
+          name: profileName,
+          about: profileAboutMe,
         });
     }
+    const handleNameChange = (e) => setProfileName(e.currentTarget.value);
+    const handleAboutMeChange = (e) => setProfileAboutMe(e.currentTarget.value);
+
     useEffect(()=> {
-        setData({
-            profileName: currentUser.name,
-            profileAboutMe: currentUser.about
-        })
+        setProfileName(currentUser.name);
+        setProfileAboutMe(currentUser.about);
+
     },[currentUser])
+
     return (
         <PopupWithForm
         title="Edit profile"
         name="profile"
         lable="Save"
+
         isOpen={props.isOpen} 
         close={props.onClose} 
         formName="profileForm"
@@ -54,11 +44,11 @@ function EditProfilePopup(props) {
                 className="popup__input popup__input-text popup__input-text_type_name"
                 type="text"
                 placeholder="name"
-                value={data.profileName}
+                value = {profileName ? profileName :""}
                 name="profileName"
                 minLength="2"
                 maxLength="40"
-                onChange ={handleChange}
+                onChange ={handleNameChange}
             />
             <span className="popup__input-error profile-name-input-error"></span>
             <input
@@ -67,11 +57,11 @@ function EditProfilePopup(props) {
                 className="popup__input popup__input-text popup__input-text_type_about-me"
                 type="text"
                 placeholder="About me"
-                value={data.profileAboutMe}
+                value={profileAboutMe ? profileAboutMe : ""}
                 name="profileAboutMe"
                 minLength="2"
                 maxLength="400"
-                onChange ={handleChange}
+                onChange ={handleAboutMeChange}
             />
             <span className="popup__input-error profile-about-me-input-error"></span>
         </PopupWithForm>

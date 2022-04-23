@@ -7,6 +7,8 @@ import Footer from "./Footer";
 import { api } from "../utils/api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup"
+import EditAvatarPopup from "./EditAvatarPopup"
+
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
@@ -65,6 +67,15 @@ function App() {
     })
   }
 
+  const handleUpdateAvatar = (data) => {
+    api.editProfileAvatar(data.avatar)
+    .then(() =>{
+      setCurrentUser(data);
+      closeAllPopups();
+    })
+  }
+
+  
   return (
     <div className="app">
       <CurrentUserContext.Provider value={currentUser}>
@@ -74,24 +85,11 @@ function App() {
           onUpdateUser={handleUpdateUser}
         />
 
-        <PopupWithForm
-          title="Change profile picture"
-          name="avatar"
-          lable="Save"
-          isOpen={isEditAvatarPopupOpen}
-          close={closeAllPopups}
-          formName="avatarForm"
-        >
-          <input
-            id="avatar-link-input"
-            className="popup__input popup__input-text popup__input-text_type_avatar-link"
-            required
-            type="url"
-            placeholder="Avatar link"
-            name="avatarImageLink"
-          />
-          <span className="popup__input-error avatar-link-input-error"></span>
-        </PopupWithForm>
+      <EditAvatarPopup 
+          isOpen={isEditAvatarPopupOpen} 
+          onClose={closeAllPopups}
+          onUpdateAvatar={handleUpdateAvatar} /> 
+        
 
         <PopupWithForm
           title="New place"

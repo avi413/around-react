@@ -2,6 +2,7 @@ import React from "react";
 
 function PopupWithForm(props) {
   const open = props.isOpen ? " popup_opened" : "";
+
   return (
     <div className={`popup popup_type_${props.name} ${open}`}>
       <button
