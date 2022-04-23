@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "2df7bb47c99fb9b75595",
+    "revision": "c3a45b88573485c4e736",
     "url": "/around-react/static/css/main.5a3d76cc.chunk.css"
   },
   {
-    "revision": "2df7bb47c99fb9b75595",
-    "url": "/around-react/static/js/main.2df7bb47.chunk.js"
+    "revision": "c3a45b88573485c4e736",
+    "url": "/around-react/static/js/main.c3a45b88.chunk.js"
   },
   {
     "revision": "cc79fa3910fc97852656",
@@ -28,10 +28,6 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/profile-edit.d476a8b8.svg"
   },
   {
-    "revision": "58430b3532ccf0b58af98981a0fb6d48",
-    "url": "/around-react/static/media/Close-Icon.58430b35.svg"
-  },
-  {
     "revision": "587ea55e6317ff1b4fcba35e837be311",
     "url": "/around-react/static/media/mobile-close-icon.587ea55e.svg"
   },
@@ -42,6 +38,10 @@ self.__precacheManifest = [
   {
     "revision": "58afbe73d6547d1730a443f381c68d9e",
     "url": "/around-react/static/media/edit.58afbe73.svg"
+  },
+  {
+    "revision": "58430b3532ccf0b58af98981a0fb6d48",
+    "url": "/around-react/static/media/Close-Icon.58430b35.svg"
   },
   {
     "revision": "94185013a6a56d2102a4e27feab0b94d",
@@ -60,10 +60,6 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/like-active.ef38b085.svg"
   },
   {
-    "revision": "c6dacb6bcfcd747bba440bf2fbd2c85a",
-    "url": "/around-react/static/media/Inter-Black.c6dacb6b.ttf"
-  },
-  {
     "revision": "eba360005eef21ac6807e45dc8422042",
     "url": "/around-react/static/media/Inter-Regular.eba36000.ttf"
   },
@@ -72,7 +68,11 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/Inter-Medium.1aa99aa2.ttf"
   },
   {
-    "revision": "697acf55dee2dcac470927d0dd0988cc",
+    "revision": "c6dacb6bcfcd747bba440bf2fbd2c85a",
+    "url": "/around-react/static/media/Inter-Black.c6dacb6b.ttf"
+  },
+  {
+    "revision": "ad76fba14c05d05333ab049486c344d6",
     "url": "/around-react/index.html"
   }
 ];
