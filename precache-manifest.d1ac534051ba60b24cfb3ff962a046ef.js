@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "a200820c55eccfb0d636",
-    "url": "/around-react/static/css/main.56e7a96a.chunk.css"
+    "revision": "22e48612e1ac6b97d431",
+    "url": "/around-react/static/css/main.5a3d76cc.chunk.css"
   },
   {
-    "revision": "a200820c55eccfb0d636",
-    "url": "/around-react/static/js/main.a200820c.chunk.js"
+    "revision": "22e48612e1ac6b97d431",
+    "url": "/around-react/static/js/main.22e48612.chunk.js"
   },
   {
-    "revision": "2e8f1a6b9f28a667d85d",
-    "url": "/around-react/static/js/1.2e8f1a6b.chunk.js"
+    "revision": "cc79fa3910fc97852656",
+    "url": "/around-react/static/js/1.cc79fa39.chunk.js"
   },
   {
-    "revision": "48d8704a8192d3af511b",
-    "url": "/around-react/static/js/2.48d8704a.chunk.js"
+    "revision": "d82094e9b23f16f1d946",
+    "url": "/around-react/static/js/2.d82094e9.chunk.js"
   },
   {
-    "revision": "6f140ef9aa6ae10422f1",
-    "url": "/around-react/static/js/runtime~main.6f140ef9.js"
+    "revision": "b671ef79c5197af8480b",
+    "url": "/around-react/static/js/runtime~main.b671ef79.js"
   },
   {
     "revision": "3e6893cd2eab107d2d5385c921e95382",
@@ -32,28 +32,20 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/mobile-close-icon.587ea55e.svg"
   },
   {
-    "revision": "94185013a6a56d2102a4e27feab0b94d",
-    "url": "/around-react/static/media/like.94185013.svg"
-  },
-  {
     "revision": "bdfb8ebb113b9312e080c2f4b4213223",
     "url": "/around-react/static/media/plus.bdfb8ebb.svg"
+  },
+  {
+    "revision": "f202ad3053ae4410e6d246994df87581",
+    "url": "/around-react/static/media/Trash.f202ad30.svg"
   },
   {
     "revision": "58430b3532ccf0b58af98981a0fb6d48",
     "url": "/around-react/static/media/Close-Icon.58430b35.svg"
   },
   {
-    "revision": "ef38b085db5a81756d4dc5a64c1fccb8",
-    "url": "/around-react/static/media/like-active.ef38b085.svg"
-  },
-  {
     "revision": "0fa1c3696d696f562fdb745f4ef13d9e",
     "url": "/around-react/static/media/edit-mobile.0fa1c369.svg"
-  },
-  {
-    "revision": "f202ad3053ae4410e6d246994df87581",
-    "url": "/around-react/static/media/Trash.f202ad30.svg"
   },
   {
     "revision": "58afbe73d6547d1730a443f381c68d9e",
@@ -64,15 +56,23 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/Inter-Regular.eba36000.ttf"
   },
   {
-    "revision": "1aa99aa25c72307cb7f16fae35e8c9d1",
-    "url": "/around-react/static/media/Inter-Medium.1aa99aa2.ttf"
-  },
-  {
     "revision": "c6dacb6bcfcd747bba440bf2fbd2c85a",
     "url": "/around-react/static/media/Inter-Black.c6dacb6b.ttf"
   },
   {
-    "revision": "dd3dffcfae8e35ad24585398086f5adb",
+    "revision": "1aa99aa25c72307cb7f16fae35e8c9d1",
+    "url": "/around-react/static/media/Inter-Medium.1aa99aa2.ttf"
+  },
+  {
+    "revision": "94185013a6a56d2102a4e27feab0b94d",
+    "url": "/around-react/static/media/like.94185013.svg"
+  },
+  {
+    "revision": "ef38b085db5a81756d4dc5a64c1fccb8",
+    "url": "/around-react/static/media/like-active.ef38b085.svg"
+  },
+  {
+    "revision": "b461862549a3d6bf35470ae2d9957388",
     "url": "/around-react/index.html"
   }
 ];
