@@ -8,6 +8,9 @@ import { api } from "../utils/api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup"
 import EditAvatarPopup from "./EditAvatarPopup"
+import AddPlacePopup from "./AddPlacePopup"
+
+
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -15,12 +18,15 @@ function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
   const [currentUser, setCurrentUser] = useState({});
+  const [cards, setCards] = useState([]);
+
 
   useEffect(() => {
     api
-      .getUserData()
-      .then((user) => {
+      .init()
+      .then(([user, cards]) => {
         setCurrentUser(user);
+        setCards(cards);
       })
       .catch((e) => {
         console.log(e);
@@ -65,6 +71,9 @@ function App() {
       setCurrentUser(user);
       closeAllPopups();
     })
+    .catch((e) => {
+      console.log(e);
+    });
   }
 
   const handleUpdateAvatar = (data) => {
@@ -73,9 +82,44 @@ function App() {
       setCurrentUser(data);
       closeAllPopups();
     })
+    .catch((e) => {
+      console.log(e);
+    });
   }
 
-  
+  const handleCardLike = (card) =>{
+    const isLiked = card.likes.some(user => user._id === currentUser._id);
+    // Check one more time if this card was already liked
+    // Send a request to the API and getting the updated card data
+    api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
+        setCards((state) => state.map((currentCard) => currentCard._id === card._id ? newCard : currentCard));
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    } 
+
+  const handleCardDelete = (card) => {
+    api.deleteCard(card._id)
+    .then(() =>{
+      setCards(cards.filter(item =>item._id !== card._id))
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+  }
+
+  const handleAddPlaceSubmit = (card) => {
+    api.createNewCard(card.link, card.name)
+    .then((newCard) =>{
+      setCards([newCard, ...cards])
+      closeAllPopups();
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+  }
+
   return (
     <div className="app">
       <CurrentUserContext.Provider value={currentUser}>
@@ -90,36 +134,12 @@ function App() {
           onClose={closeAllPopups}
           onUpdateAvatar={handleUpdateAvatar} /> 
         
+      <AddPlacePopup 
+          isOpen={isAddPlacePopupOpen} 
+          onClose={closeAllPopups}
+          onAddPlace={handleAddPlaceSubmit} 
+      />
 
-        <PopupWithForm
-          title="New place"
-          name="new-card"
-          lable="Save"
-          isOpen={isAddPlacePopupOpen}
-          close={closeAllPopups}
-          formName="newCardForm"
-        >
-          <input
-            id="card-title-input"
-            className="popup__input popup__input-text popup__input-text_type_title"
-            required
-            type="text"
-            placeholder="Title"
-            name="placeName"
-            minLength="2"
-            maxLength="30"
-          />
-          <span className="popup__input-error card-title-input-error"></span>
-          <input
-            id="card-link-input"
-            className="popup__input popup__input-text popup__input-text_type_Image-link"
-            required
-            type="url"
-            placeholder="Image link"
-            name="placeImageLink"
-          />
-          <span className="popup__input-error card-link-input-error"></span>
-        </PopupWithForm>
 
         <PopupWithForm
           title="Are you sure?"
@@ -137,10 +157,13 @@ function App() {
           onAddPlaceClick={handleAddPlaceClick}
           onEditAvatarClick={handleEditAvatarClick}
           onCardClick={handleCardClick}
+          onCardLike={handleCardLike}
+          onCardDelete= {handleCardDelete}
           isEditProfilePopupOpen={isEditProfilePopupOpen}
           isAddPlacePopupOpen={isAddPlacePopupOpen}
           isEditAvatarPopupOpen={isEditAvatarPopupOpen}
           selectedCard={selectedCard}
+          cards={cards}
         />
         <Footer />
       </CurrentUserContext.Provider>

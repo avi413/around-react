@@ -1,23 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { api } from "../utils/api";
+import React, { useContext } from "react";
 import Card from "./Card";
 import profileEdit from "../images/profile-edit.svg";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function Main(props) {
-  const currentUser = React.useContext(CurrentUserContext);
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    api
-      .getInitialCards()
-      .then((apiCards) => {
-        setCards(apiCards);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
+  const currentUser = useContext(CurrentUserContext);
 
   return (
     <main className="content">
@@ -58,26 +45,11 @@ function Main(props) {
 
       <section className="gallery">
         <ul className="gallery__list">
-          {cards.map(function(card) {
+          {props.cards.map(function(card) {
               const isLiked = card.likes.some(user => user._id === currentUser._id);
-    
-              function handleCardLike(card) {
-                // Check one more time if this card was already liked
-                // Send a request to the API and getting the updated card data
-                api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
-                    setCards((state) => state.map((currentCard) => currentCard._id === card._id ? newCard : currentCard));
-                  });
-                } 
-
-                function handleCardDelete(card) {
-                  api.deleteCard(card._id)
-                  .then(() =>{
-                    setCards(cards.filter(item =>item._id !== card._id))
-                  })
-                }
 
             return (
-              <Card click={props.onCardClick} card={card} key={card._id} onCardLike={handleCardLike} isLiked={isLiked} onCardDelete={handleCardDelete}/>
+              <Card click={props.onCardClick} card={card} key={card._id} onCardLike={props.onCardLike} isLiked={isLiked} onCardDelete={props.onCardDelete }/>
             );
           })}
         </ul>

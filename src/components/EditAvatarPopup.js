@@ -3,8 +3,6 @@ import PopupWithForm from "./PopupWithForm";
 
 function EditAvatarPopup(props) {
     const inputEl = useRef(null);
-    
-
 
     const handleSubmit = (event) => {
          // Prevent the browser from navigating to the form address
@@ -13,7 +11,6 @@ function EditAvatarPopup(props) {
             avatar: inputEl.current.value,
           });
     }
-
 
     return (
         <PopupWithForm
