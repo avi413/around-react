@@ -9,7 +9,7 @@ function Main(props) {
   return (
     <main className="content">
       <section className="profile">
-        <p className="profile__error"></p>
+        <p className="profile__error" />
         <div className="profile__info">
           <div className="profile__img">
             <img
@@ -32,7 +32,7 @@ function Main(props) {
               type="button"
               className="profile__edit-btn button button_clear button_open button_opacity_m button_border_sm"
               onClick={props.onEditProfileClick}
-            ></button>
+            />
           </div>
         </div>
         <button
@@ -40,7 +40,7 @@ function Main(props) {
           type="button"
           className="profile__add-btn button button_clear button_open button_opacity_m button_border_m"
           onClick={props.onAddPlaceClick}
-        ></button>
+        />
       </section>
 
       <section className="gallery">

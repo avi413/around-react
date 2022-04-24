@@ -31,7 +31,7 @@ function EditAvatarPopup(props) {
         placeholder="Avatar link"
         name="avatarImageLink"
       />
-      <span className="popup__input-error avatar-link-input-error"></span>
+      <span className="popup__input-error avatar-link-input-error"/>
     </PopupWithForm>
   );
 }

@@ -40,7 +40,7 @@ function AddPlacePopup(props) {
         onChange={handleNameChange}
         value={placeName}
       />
-      <span className="popup__input-error card-title-input-error"></span>
+      <span className="popup__input-error card-title-input-error" />
       <input
         id="card-link-input"
         className="popup__input popup__input-text popup__input-text_type_Image-link"
@@ -51,7 +51,7 @@ function AddPlacePopup(props) {
         onChange={handleImageLinkChange}
         value={placeImageLink}
       />
-      <span className="popup__input-error card-link-input-error"></span>
+      <span className="popup__input-error card-link-input-error" />
     </PopupWithForm>
   );
 }

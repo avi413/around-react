@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-
 function Card(props) {
-  const currentUser = React.useContext(CurrentUserContext);
+  const currentUser = useContext(CurrentUserContext);
   const card = props.card;
   const isOwn = card.owner._id === currentUser._id;
   // Creating a variable which will then set in `className` for the delete button
@@ -12,7 +11,9 @@ function Card(props) {
       ? "gallery__item-trash-btn_visible"
       : " gallery__item-trash-btn_hidden"
   }`;
-  const isLikedClass = `${props.isLiked ? "gallery__like-btn_active" : "gallery__like-btn"}`
+  const isLikedClass = `${
+    props.isLiked ? "gallery__like-btn_active" : "gallery__like-btn"
+  }`;
   return (
     <div id={card.id}>
       <li className="gallery__item">
@@ -20,8 +21,8 @@ function Card(props) {
           aria-label="trash button"
           type="button"
           className={`${cardDeleteButtonClassName} button button_clear`}
-          onClick={()=>props.onCardDelete(card)}
-        ></button>
+          onClick={() => props.onCardDelete(card)}
+        />
         <img
           src={card.link}
           className="gallery__item-img"
@@ -35,8 +36,8 @@ function Card(props) {
               aria-label="like button"
               type="button"
               className={`${isLikedClass} button button_clear`}
-              onClick={()=>props.onCardLike(card)}
-            ></button>
+              onClick={() => props.onCardLike(card)}
+            />
             <p className="gllery__like-count">{card.likes.length}</p>
           </div>
         </div>

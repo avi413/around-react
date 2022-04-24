@@ -47,7 +47,7 @@ function EditProfilePopup(props) {
         maxLength="40"
         onChange={handleNameChange}
       />
-      <span className="popup__input-error profile-name-input-error"></span>
+      <span className="popup__input-error profile-name-input-error" />
       <input
         id="profile-about-me-input"
         required
@@ -60,7 +60,7 @@ function EditProfilePopup(props) {
         maxLength="400"
         onChange={handleAboutMeChange}
       />
-      <span className="popup__input-error profile-about-me-input-error"></span>
+      <span className="popup__input-error profile-about-me-input-error" />
     </PopupWithForm>
   );
 }
