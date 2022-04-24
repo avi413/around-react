@@ -15,6 +15,8 @@ function AddPlacePopup(props) {
       link: placeImageLink,
       name: placeName,
     });
+    setPlaceName("");
+    setPlaceImageLink("");
   };
   return (
     <PopupWithForm
@@ -36,6 +38,7 @@ function AddPlacePopup(props) {
         minLength="2"
         maxLength="30"
         onChange={handleNameChange}
+        value={placeName}
       />
       <span className="popup__input-error card-title-input-error"></span>
       <input
@@ -46,6 +49,7 @@ function AddPlacePopup(props) {
         placeholder="Image link"
         name="placeImageLink"
         onChange={handleImageLinkChange}
+        value={placeImageLink}
       />
       <span className="popup__input-error card-link-input-error"></span>
     </PopupWithForm>
