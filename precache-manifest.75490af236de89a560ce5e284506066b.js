@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c3a45b88573485c4e736",
+    "revision": "df78f456b782c2543f42",
     "url": "/around-react/static/css/main.5a3d76cc.chunk.css"
   },
   {
-    "revision": "c3a45b88573485c4e736",
-    "url": "/around-react/static/js/main.c3a45b88.chunk.js"
+    "revision": "df78f456b782c2543f42",
+    "url": "/around-react/static/js/main.df78f456.chunk.js"
   },
   {
     "revision": "cc79fa3910fc97852656",
@@ -32,14 +32,6 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/mobile-close-icon.587ea55e.svg"
   },
   {
-    "revision": "bdfb8ebb113b9312e080c2f4b4213223",
-    "url": "/around-react/static/media/plus.bdfb8ebb.svg"
-  },
-  {
-    "revision": "58afbe73d6547d1730a443f381c68d9e",
-    "url": "/around-react/static/media/edit.58afbe73.svg"
-  },
-  {
     "revision": "58430b3532ccf0b58af98981a0fb6d48",
     "url": "/around-react/static/media/Close-Icon.58430b35.svg"
   },
@@ -48,8 +40,8 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/like.94185013.svg"
   },
   {
-    "revision": "0fa1c3696d696f562fdb745f4ef13d9e",
-    "url": "/around-react/static/media/edit-mobile.0fa1c369.svg"
+    "revision": "bdfb8ebb113b9312e080c2f4b4213223",
+    "url": "/around-react/static/media/plus.bdfb8ebb.svg"
   },
   {
     "revision": "f202ad3053ae4410e6d246994df87581",
@@ -60,6 +52,18 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/like-active.ef38b085.svg"
   },
   {
+    "revision": "0fa1c3696d696f562fdb745f4ef13d9e",
+    "url": "/around-react/static/media/edit-mobile.0fa1c369.svg"
+  },
+  {
+    "revision": "58afbe73d6547d1730a443f381c68d9e",
+    "url": "/around-react/static/media/edit.58afbe73.svg"
+  },
+  {
+    "revision": "c6dacb6bcfcd747bba440bf2fbd2c85a",
+    "url": "/around-react/static/media/Inter-Black.c6dacb6b.ttf"
+  },
+  {
     "revision": "eba360005eef21ac6807e45dc8422042",
     "url": "/around-react/static/media/Inter-Regular.eba36000.ttf"
   },
@@ -68,11 +72,7 @@ self.__precacheManifest = [
     "url": "/around-react/static/media/Inter-Medium.1aa99aa2.ttf"
   },
   {
-    "revision": "c6dacb6bcfcd747bba440bf2fbd2c85a",
-    "url": "/around-react/static/media/Inter-Black.c6dacb6b.ttf"
-  },
-  {
-    "revision": "ad76fba14c05d05333ab049486c344d6",
+    "revision": "8929a742f70b995950461ffc3c79685f",
     "url": "/around-react/index.html"
   }
 ];
